@@ -9,8 +9,8 @@ pipeline {
         stage('Build') {
             steps {
                 withDockerRegistry(credentialsId: 'dockerhub-test-jenkins', url: 'https://index.docker.io/v1/') {
-                    sh 'docker build -t benalpha1105/golang-jenkins .'
-                    sh 'docker push benalpha1105/golang-jenkins'
+                    sh 'sudo docker build -t benalpha1105/golang-jenkins .'
+                    sh 'sudo docker push benalpha1105/golang-jenkins'
                 }
             }
         }
